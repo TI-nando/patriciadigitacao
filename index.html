@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrícia Digitação - Papelaria Personalizada e Serviços Gráficos</title>
+    <meta name="description" content="Serviços de papelaria personalizada e gráfica. Encadernação, cartonagem, plastificação e impressões em diversos formatos A1, A2, A3, A4.">   
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/images/patriciaLogo.jpeg">
+</head>
+<body class="bg-white text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300" data-aos="fade-down">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="src/images/patriciaLogo.jpeg" alt="Patrícia Digitação Logo" class="h-16 w-auto rounded-full shadow-md border-2 border-red-600 hover:scale-105 transition-transform duration-300">
+                    <span class="ml-3 text-xl font-bold text-gray-800 hidden sm:block">Patrícia Digitação</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Serviços</a>
+                    <a href="#contato" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Contato</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-red-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium py-2">Início</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium py-2">Serviços</a>
+                    <a href="#contato" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium py-2">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat pt-20" style="background-image: url('src/images/hero-bg.jpeg');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-white/85"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Patrícia Digitação
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Papelaria personalizada e serviços gráficos com excelência e precisão. 
+                    Transforme seus projetos em trabalhos profissionais de alta qualidade.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#servicos" class="btn-primary inline-flex items-center justify-center">
+                        <i class="fas fa-arrow-down mr-2"></i>
+                        Conheça nossos serviços
+                    </a>
+                    <a href="#contato" class="bg-white text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded transition-all duration-300 inline-flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Fale conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nossos Serviços</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Oferecemos uma gama completa de serviços gráficos com qualidade premium e atenção aos detalhes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card: A1/A2 -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
+                        <img src="src/images/servico-1.jpeg" alt="Impressões A1/A2" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <span class="text-white font-medium">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Impressões A1/A2</h3>
+                        <p class="text-gray-600 text-center mb-4 text-sm">
+                            Impressões em grandes formatos para projetos técnicos, arquitetônicos e apresentações profissionais.
+                        </p>
+                        <div class="text-center pt-4 border-t border-gray-100">
+                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Alta Definição</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card: A3/A4 -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
+                        <img src="src/images/servico-2.jpeg" alt="Impressões A3/A4" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <span class="text-white font-medium">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Impressões A3/A4</h3>
+                        <p class="text-gray-600 text-center mb-4 text-sm">
+                            Impressões padrão para documentos, trabalhos acadêmicos e materiais corporativos com qualidade superior.
+                        </p>
+                        <div class="text-center pt-4 border-t border-gray-100">
+                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Papel Premium</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card: Encadernação -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
+                        <img src="src/images/servico-3.jpeg" alt="Encadernação" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <span class="text-white font-medium">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Encadernação</h3>
+                        <p class="text-gray-600 text-center mb-4 text-sm">
+                            Encadernação profissional para TCC, dissertações, manuais e documentos importantes.
+                        </p>
+                        <div class="text-center pt-4 border-t border-gray-100">
+                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Acabamento Top</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card: Cartonagem -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
+                        <img src="src/images/servico-4.jpeg" alt="Cartonagem" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <span class="text-white font-medium">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Cartonagem</h3>
+                        <p class="text-gray-600 text-center mb-4 text-sm">
+                            Cartonagem artesanal para trabalhos acadêmicos, caixas personalizadas e materiais promocionais.
+                        </p>
+                        <div class="text-center pt-4 border-t border-gray-100">
+                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Feito à Mão</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card: Plastificação -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
+                        <img src="src/images/servico-5.jpeg" alt="Plastificação" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <span class="text-white font-medium">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Plastificação</h3>
+                        <p class="text-gray-600 text-center mb-4 text-sm">
+                            Plastificação de documentos, cartões, fotos e materiais diversos com alta durabilidade.
+                        </p>
+                        <div class="text-center pt-4 border-t border-gray-100">
+                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Proteção Total</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card: Personalização -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
+                        <img src="src/images/servico-6.jpeg" alt="Personalização" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <span class="text-white font-medium">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Personalização</h3>
+                        <p class="text-gray-600 text-center mb-4 text-sm">
+                            Serviços personalizados de acordo com suas necessidades específicas, com atendimento exclusivo.
+                        </p>
+                        <div class="text-center pt-4 border-t border-gray-100">
+                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Sob Medida</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Estamos prontos para transformar seus projetos em realidade. Entre em contato e solicite seu orçamento.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- WhatsApp Contact -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fab fa-whatsapp text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">WhatsApp</h3>
+                        <p class="text-gray-600 mb-6">
+                            Envie mensagem diretamente pelo WhatsApp para orçamentos rápidos e atendimento imediato.
+                        </p>
+                        <a href="https://wa.me/5511999999999" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            (11) 99999-9999
+                        </a>
+                    </div>
+                    
+                    <!-- Location and Hours -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-map-marker-alt text-red-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Localização</h3>
+                        <div class="text-gray-600 space-y-2">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-red-600"></i>
+                                Rua Exemplo, 123 - Bairro
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-clock mr-2 text-red-600"></i>
+                                Segunda a Sexta: 8h às 18h
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-clock mr-2 text-red-600"></i>
+                                Sábado: 8h às 12h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-2">Patrícia Digitação</h3>
+                <p class="text-gray-400 mb-4">Papelaria personalizada e serviços gráficos com excelência</p>
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="https://wa.me/5511999999999" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors duration-300">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition-colors duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    © 2025 Patrícia Digitação. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="src/js/main.js"></script>
+</body>
+</html>

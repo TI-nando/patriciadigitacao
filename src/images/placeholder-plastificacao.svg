@@ -1,0 +1,29 @@
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="150" fill="#f3f4f6" rx="8"/>
+  
+  <!-- Document base -->
+  <rect x="55" y="40" width="90" height="70" fill="white" stroke="#d1d5db" stroke-width="1" rx="2"/>
+  <rect x="60" y="45" width="80" height="60" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" rx="1"/>
+  
+  <!-- Plastic film layers -->
+  <rect x="52" y="37" width="96" height="76" fill="none" stroke="#C40000" stroke-width="2" rx="4" opacity="0.7"/>
+  <rect x="49" y="34" width="102" height="82" fill="none" stroke="#C40000" stroke-width="2" rx="5" opacity="0.5"/>
+  <rect x="46" y="31" width="108" height="88" fill="none" stroke="#C40000" stroke-width="2" rx="6" opacity="0.3"/>
+  
+  <!-- Document content -->
+  <line x1="70" y1="55" x2="130" y2="55" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="70" y1="63" x2="130" y2="63" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="70" y1="71" x2="130" y2="71" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="70" y1="79" x2="110" y2="79" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="70" y1="87" x2="125" y2="87" stroke="#d1d5db" stroke-width="1"/>
+  
+  <!-- Protection icon -->
+  <g transform="translate(100, 75)">
+    <circle cx="0" cy="0" r="12" fill="#C40000"/>
+    <path d="M-6,-2 L-2,-2 L-2,-6 L2,-6 L2,-2 L6,-2 L6,2 L2,2 L2,6 L-2,6 L-2,2 L-6,2 Z" fill="white"/>
+  </g>
+  
+  <!-- Label -->
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Plastificação</text>
+</svg>

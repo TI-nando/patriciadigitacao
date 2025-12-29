@@ -1,0 +1,243 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Color Configuration */
+:root {
+  --color-primary: #C40000;
+  --color-primary-dark: #A00000;
+  --color-secondary: #FFFFFF;
+  --color-accent: #000000;
+  --color-gray-light: #F9FAFB;
+  --color-gray-medium: #6B7280;
+  --color-gray-dark: #374151;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg;
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-white text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-lg transition-all duration-300;
+  }
+  
+  /* Card Styles */
+  .service-card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-100;
+  }
+  
+  /* Navigation Styles */
+  .nav-link {
+    @apply text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  }
+  
+  /* Service Icon Background */
+  .service-icon-bg {
+    @apply w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto;
+  }
+  
+  /* Contact Section Styles */
+  .contact-icon-bg {
+    @apply w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto;
+  }
+  
+  /* Footer Styles */
+  .footer-bg {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+}
+
+/* Utility Styles */
+@layer utilities {
+  /* Text Shadow */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Box Shadow Custom */
+  .shadow-custom {
+    box-shadow: 0 10px 25px rgba(196, 0, 0, 0.1);
+  }
+  
+  /* Animation Delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  
+  /* Custom Transitions */
+  .transition-all-custom {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(196, 0, 0, 0.15);
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  }
+  
+  .bg-gradient-gray {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Mobile Menu Styles */
+  .mobile-menu {
+    @apply bg-white border-t border-gray-200;
+  }
+  
+  /* Mobile Hero Adjustments */
+  .hero-title {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  /* Mobile Service Cards */
+  .service-card-mobile {
+    @apply mx-4;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-black;
+  }
+  
+  .service-card {
+    @apply border-2 border-gray-900;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom AOS Animations */
+[data-aos="fade-in-up"] {
+  transform: translateY(30px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-in-up"].aos-animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Focus Styles for Accessibility */
+.focus-visible {
+  @apply outline-none ring-2 ring-red-600 ring-offset-2;
+}
+
+/* Custom Focus States */
+button:focus-visible,
+a:focus-visible {
+  @apply outline-none ring-2 ring-red-600 ring-offset-2;
+}
+
+/* WhatsApp Button Specific */
+.whatsapp-button {
+  @apply bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 inline-flex items-center shadow-lg;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}

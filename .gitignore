@@ -1,0 +1,17 @@
+# Documentação
+documents/
+
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Logs e Temporários
+*.log
+tmp/
+temp/
+
+# Dependências (caso adicione Node.js no futuro)
+node_modules/
+dist/
+build/
