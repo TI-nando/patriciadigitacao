@@ -5,7 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrícia Digitação - Papelaria Personalizada e Serviços Gráficos</title>
     <meta name="description" content="Serviços de papelaria personalizada e gráfica. Encadernação, cartonagem, plastificação e impressões em diversos formatos A1, A2, A3, A4.">   
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>  
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        heading: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#C40000',
+                            dark: '#1A1A1A',
+                        }
+                    },
+                    animation: {
+                        shine: 'shine 1s',
+                    },
+                    keyframes: {
+                        shine: {
+                            '100%': { left: '125%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="src/css/style.css">
@@ -49,29 +80,37 @@
     
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat pt-20" style="background-image: url('src/images/hero-bg.jpeg');">
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-white/85"></div>
+        <!-- Overlay with Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/90"></div>
         
         <div class="container mx-auto px-4 text-center relative z-10">
             <div data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                    Patrícia Digitação
+                <h1 class="text-5xl md:text-7xl font-bold font-heading text-gray-900 mb-6 tracking-tight leading-tight drop-shadow-sm">
+                    Patrícia <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-800 drop-shadow-sm">Digitação</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Papelaria personalizada e serviços gráficos com excelência e precisão. 
+                <p class="text-xl md:text-2xl text-gray-800 mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-sm">
+                    Papelaria personalizada e serviços gráficos com <span class="font-bold text-gray-900">excelência</span> e <span class="font-bold text-gray-900">precisão</span>. 
                     Transforme seus projetos em trabalhos profissionais de alta qualidade.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#servicos" class="btn-primary inline-flex items-center justify-center">
-                        <i class="fas fa-arrow-down mr-2"></i>
-                        Conheça nossos serviços
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
+                    <a href="#servicos" class="group relative px-8 py-4 bg-gradient-to-r from-brand-red to-red-600 text-white font-bold rounded-full overflow-hidden shadow-lg hover:shadow-red-500/40 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+                        <div class="absolute inset-0 w-full h-full bg-white/20 skew-x-12 -translate-x-full group-hover:animate-shine"></div>
+                        <span class="relative flex items-center tracking-wide">
+                            CONHEÇA NOSSOS SERVIÇOS
+                        </span>
                     </a>
-                    <a href="#contato" class="bg-white text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded transition-all duration-300 inline-flex items-center justify-center">
-                        <i class="fab fa-whatsapp mr-2"></i>
-                        Fale conosco
+                    <a href="https://wa.me/5564981334921" target="_blank" class="group relative px-8 py-4 bg-white text-gray-800 border-2 border-gray-100 hover:border-green-500 hover:text-green-600 font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-green-100 flex items-center transform hover:-translate-y-1">
+                        <span class="absolute w-3 h-3 bg-green-500 rounded-full top-3 right-3 animate-pulse"></span>
+                        <i class="fab fa-whatsapp mr-3 text-green-500 text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="tracking-wide">FALE CONOSCO</span>
                     </a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block text-gray-400">
+            <i class="fas fa-chevron-down text-2xl"></i>
         </div>
     </section>
     
@@ -87,115 +126,151 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service Card: A1/A2 -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
-                        <img src="src/images/servico-1.jpeg" alt="Impressões A1/A2" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                            <span class="text-white font-medium">Ver detalhes</span>
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                        <img src="src/images/servico-1.jpeg" alt="Impressões A1/A2" class="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 drop-shadow-lg relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8 z-20">
+                            <span class="text-white font-bold text-sm px-6 py-2.5 border border-white/40 bg-white/20 backdrop-blur-md rounded-full tracking-wide shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Impressões A1/A2</h3>
-                        <p class="text-gray-600 text-center mb-4 text-sm">
+                    <div class="p-8 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-3 text-center group-hover:text-brand-red transition-colors">Impressões A1/A2</h3>
+                        <p class="text-gray-700 font-medium text-center mb-6 leading-relaxed">
                             Impressões em grandes formatos para projetos técnicos, arquitetônicos e apresentações profissionais.
                         </p>
-                        <div class="text-center pt-4 border-t border-gray-100">
-                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Alta Definição</span>
+                        <div class="text-center pt-4 border-t border-gray-100 flex justify-center">
+                            <span class="inline-flex items-center bg-red-50 text-brand-red text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-star mr-2 text-[10px]"></i> Alta Definição
+                            </span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service Card: A3/A4 -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
-                        <img src="src/images/servico-2.jpeg" alt="Impressões A3/A4" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                            <span class="text-white font-medium">Ver detalhes</span>
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                        <img src="src/images/servico-2.jpeg" alt="Impressões A3/A4" class="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 drop-shadow-lg relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8 z-20">
+                            <span class="text-white font-bold text-sm px-6 py-2.5 border border-white/40 bg-white/20 backdrop-blur-md rounded-full tracking-wide shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Impressões A3/A4</h3>
-                        <p class="text-gray-600 text-center mb-4 text-sm">
+                    <div class="p-8 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-3 text-center group-hover:text-brand-red transition-colors">Impressões A3/A4</h3>
+                        <p class="text-gray-700 font-medium text-center mb-6 leading-relaxed">
                             Impressões padrão para documentos, trabalhos acadêmicos e materiais corporativos com qualidade superior.
                         </p>
-                        <div class="text-center pt-4 border-t border-gray-100">
-                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Papel Premium</span>
+                        <div class="text-center pt-4 border-t border-gray-100 flex justify-center">
+                            <span class="inline-flex items-center bg-red-50 text-brand-red text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-check-circle mr-2 text-[10px]"></i> Papel Premium
+                            </span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service Card: Encadernação -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
-                        <img src="src/images/servico-3.jpeg" alt="Encadernação" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                            <span class="text-white font-medium">Ver detalhes</span>
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                        <img src="src/images/servico-3.jpeg" alt="Encadernação" class="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 drop-shadow-lg relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8 z-20">
+                            <span class="text-white font-bold text-sm px-6 py-2.5 border border-white/40 bg-white/20 backdrop-blur-md rounded-full tracking-wide shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Encadernação</h3>
-                        <p class="text-gray-600 text-center mb-4 text-sm">
+                    <div class="p-8 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-3 text-center group-hover:text-brand-red transition-colors">Encadernação</h3>
+                        <p class="text-gray-700 font-medium text-center mb-6 leading-relaxed">
                             Encadernação profissional para TCC, dissertações, manuais e documentos importantes.
                         </p>
-                        <div class="text-center pt-4 border-t border-gray-100">
-                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Acabamento Top</span>
+                        <div class="text-center pt-4 border-t border-gray-100 flex justify-center">
+                            <span class="inline-flex items-center bg-red-50 text-brand-red text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-book mr-2 text-[10px]"></i> Acabamento Top
+                            </span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service Card: Cartonagem -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
-                        <img src="src/images/servico-4.jpeg" alt="Cartonagem" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                            <span class="text-white font-medium">Ver detalhes</span>
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                        <img src="src/images/servico-4.jpeg" alt="Cartonagem" class="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 drop-shadow-lg relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8 z-20">
+                            <span class="text-white font-bold text-sm px-6 py-2.5 border border-white/40 bg-white/20 backdrop-blur-md rounded-full tracking-wide shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Cartonagem</h3>
-                        <p class="text-gray-600 text-center mb-4 text-sm">
+                    <div class="p-8 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-3 text-center group-hover:text-brand-red transition-colors">Cartonagem</h3>
+                        <p class="text-gray-700 font-medium text-center mb-6 leading-relaxed">
                             Cartonagem artesanal para trabalhos acadêmicos, caixas personalizadas e materiais promocionais.
                         </p>
-                        <div class="text-center pt-4 border-t border-gray-100">
-                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Feito à Mão</span>
+                        <div class="text-center pt-4 border-t border-gray-100 flex justify-center">
+                            <span class="inline-flex items-center bg-red-50 text-brand-red text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-hand-holding-heart mr-2 text-[10px]"></i> Feito à Mão
+                            </span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service Card: Plastificação -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
-                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
-                        <img src="src/images/servico-5.jpeg" alt="Plastificação" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                            <span class="text-white font-medium">Ver detalhes</span>
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                        <img src="src/images/servico-5.jpeg" alt="Plastificação" class="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 drop-shadow-lg relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8 z-20">
+                            <span class="text-white font-bold text-sm px-6 py-2.5 border border-white/40 bg-white/20 backdrop-blur-md rounded-full tracking-wide shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Plastificação</h3>
-                        <p class="text-gray-600 text-center mb-4 text-sm">
+                    <div class="p-8 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-3 text-center group-hover:text-brand-red transition-colors">Plastificação</h3>
+                        <p class="text-gray-700 font-medium text-center mb-6 leading-relaxed">
                             Plastificação de documentos, cartões, fotos e materiais diversos com alta durabilidade.
                         </p>
-                        <div class="text-center pt-4 border-t border-gray-100">
-                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Proteção Total</span>
+                        <div class="text-center pt-4 border-t border-gray-100 flex justify-center">
+                            <span class="inline-flex items-center bg-red-50 text-brand-red text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-shield-alt mr-2 text-[10px]"></i> Proteção Total
+                            </span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service Card: Personalização -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
-                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-white">
-                        <img src="src/images/servico-6.jpeg" alt="Personalização" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                            <span class="text-white font-medium">Ver detalhes</span>
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-64 md:h-80 lg:h-[28rem] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                        <img src="src/images/servico-6.jpeg" alt="Personalização" class="w-full h-full object-contain transform group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 drop-shadow-lg relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8 z-20">
+                            <span class="text-white font-bold text-sm px-6 py-2.5 border border-white/40 bg-white/20 backdrop-blur-md rounded-full tracking-wide shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                Ver detalhes <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-center group-hover:text-red-600 transition-colors">Personalização</h3>
-                        <p class="text-gray-600 text-center mb-4 text-sm">
+                    <div class="p-8 relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-3 text-center group-hover:text-brand-red transition-colors">Personalização</h3>
+                        <p class="text-gray-700 font-medium text-center mb-6 leading-relaxed">
                             Serviços personalizados de acordo com suas necessidades específicas, com atendimento exclusivo.
                         </p>
-                        <div class="text-center pt-4 border-t border-gray-100">
-                            <span class="inline-block bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">Sob Medida</span>
+                        <div class="text-center pt-4 border-t border-gray-100 flex justify-center">
+                            <span class="inline-flex items-center bg-red-50 text-brand-red text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-cut mr-2 text-[10px]"></i> Sob Medida
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -204,49 +279,57 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contato" class="py-20 bg-white">
+    <section id="contato" class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <span class="inline-block py-1 px-3 rounded-full bg-red-100 text-brand-red text-sm font-bold mb-4 tracking-wider uppercase shadow-sm">Atendimento</span>
+                <h2 class="text-3xl md:text-5xl font-bold font-heading text-gray-900 mb-6">Entre em Contato</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     Estamos prontos para transformar seus projetos em realidade. Entre em contato e solicite seu orçamento.
                 </p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                     <!-- WhatsApp Contact -->
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fab fa-whatsapp text-white text-3xl"></i>
+                    <div class="group bg-white rounded-2xl shadow-lg p-10 text-center hover:shadow-2xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-500 group-hover:scale-150"></div>
+                        
+                        <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-8 mx-auto relative z-10 group-hover:bg-green-500 transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-green-600 text-4xl group-hover:text-white transition-colors duration-300"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">WhatsApp</h3>
-                        <p class="text-gray-600 mb-6">
+                        
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-4">WhatsApp</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
                             Envie mensagem diretamente pelo WhatsApp para orçamentos rápidos e atendimento imediato.
                         </p>
-                        <a href="https://wa.me/5511999999999" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center">
-                            <i class="fab fa-whatsapp mr-2"></i>
+                        <a href="https://wa.me/5564981334921" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 group-hover:ring-4 ring-green-100">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i>
                             (64) 98133-4921
                         </a>
                     </div>
                     
                     <!-- Location and Hours -->
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-map-marker-alt text-red-600 text-3xl"></i>
+                    <div class="group bg-white rounded-2xl shadow-lg p-10 text-center hover:shadow-2xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-500 group-hover:scale-150"></div>
+                        
+                        <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-8 mx-auto relative z-10 group-hover:bg-brand-red transition-colors duration-300">
+                            <i class="fas fa-map-marker-alt text-brand-red text-4xl group-hover:text-white transition-colors duration-300"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Localização</h3>
-                        <div class="text-gray-600 space-y-2">
+                        
+                        <h3 class="text-2xl font-bold font-heading text-gray-900 mb-4">Localização</h3>
+                        <div class="text-gray-600 space-y-4 leading-relaxed">
                             <p class="flex items-center justify-center">
-                                <i class="fas fa-map-marker-alt mr-2 text-red-600"></i>
+                                <span class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center mr-3 text-brand-red"><i class="fas fa-map-pin text-sm"></i></span>
                                 Rua 13 de Maio, Nº 23 - Centro - IpamerI-GO
                             </p>
+                            <div class="border-t border-gray-100 my-4 w-1/2 mx-auto"></div>
                             <p class="flex items-center justify-center">
-                                <i class="fas fa-clock mr-2 text-red-600"></i>
-                                Segunda a Sexta: 8h às 18h
+                                <span class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center mr-3 text-brand-red"><i class="far fa-clock text-sm"></i></span>
+                                Seg a Sex: 8h às 18h
                             </p>
                             <p class="flex items-center justify-center">
-                                <i class="fas fa-clock mr-2 text-red-600"></i>
+                                <span class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center mr-3 text-brand-red"><i class="far fa-clock text-sm"></i></span>
                                 Sábado: 8h às 12h
                             </p>
                         </div>
@@ -255,8 +338,6 @@
             </div>
         </div>
     </section>
-    
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="text-center">
@@ -277,6 +358,11 @@
         </div>
     </footer>
     
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-brand-red text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center translate-y-20 opacity-0 transition-all duration-500 z-40 hover:bg-red-700 focus:outline-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- AOS Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
