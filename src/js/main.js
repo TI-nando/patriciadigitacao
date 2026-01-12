@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize WhatsApp Button
     initializeWhatsAppButton();
     
+    // Initialize Back to Top Button
+    initializeBackToTop();
+    
     // Initialize Service Cards Hover Effects
     initializeServiceCards();
     
@@ -209,6 +212,30 @@ function initializeWhatsAppButton() {
             this.style.transform = 'scale(1)';
         });
     });
+}
+
+/**
+ * Initialize Back to Top Button
+ */
+function initializeBackToTop() {
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopButton.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 }
 
 /**
